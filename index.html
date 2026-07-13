@@ -71,7 +71,12 @@
   @keyframes blink{50%{opacity:0;}}
 
   h1.headline{font-size:clamp(36px,6vw,56px);line-height:1.05;letter-spacing:-1px;margin-bottom:20px;}
-  h1.headline .accent{color:var(--gold);}
+  h1.headline .accent{
+    background:linear-gradient(90deg, var(--gold), var(--teal));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
   .sub{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:32px;}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
   .btn{
@@ -148,12 +153,13 @@
       <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
       <div class="line"><span class="prompt">&gt;</span> loading profile...</div>
       <div class="line out">name: BoHasan</div>
-      <div class="line out">stack: PHP / CodeIgniter 4 · Flutter</div>
+      <div class="line out">experience: 8+ years · fintech, regtech, gov ID systems</div>
+      <div class="line out">stack: PHP (CI3/CI4, Laravel) · Flutter · .NET · MERN</div>
       <div class="line out">status: building real apps, fixing real bugs</div>
       <div class="line"><span class="prompt">&gt;</span> <span class="cursor"></span></div>
     </div>
     <h1 class="headline">Real apps.<br>Real bugs.<br><span class="accent">Real code.</span></h1>
-    <p class="sub">Full stack developer specializing in CodeIgniter 4 (MVC) and Flutter — building production systems, not tutorial demos.</p>
+    <p class="sub">Senior full stack developer with 8+ years building production systems — live payment platforms, insurance regulatory tech, and government ID verification. Currently shipping in CodeIgniter 4 and Flutter.</p>
     <div class="cta-row">
       <a href="#work" class="btn btn-primary">See the work</a>
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -168,33 +174,84 @@
     <div class="project-grid">
 
       <div class="project-card">
-        <span class="tag">production · in development</span>
+        <span class="tag">production · live since 2019</span>
+        <h3>Tahseeel Payment Platform</h3>
+        <p>Lead full stack developer on a live payment and e-commerce platform, owning product planning end-to-end and serving as senior technical point of contact for ongoing development.</p>
+        <div class="project-stack">
+          <span>PHP</span><span>CodeIgniter</span><span>MySQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">non-profit · in development</span>
         <h3>Royal Restaurant</h3>
-        <p>A meal delivery management platform built for a non-profit, serving 300+ households — with role-based staff access, activity logging, and a mobile-first household interface. Currently expanding into inventory management and per-household finance tracking.</p>
+        <p>A meal delivery management platform for a non-profit, serving 300+ households — role-based staff access, activity logging, and a mobile-first household interface. Now expanding into inventory management and per-household finance tracking.</p>
         <div class="project-stack">
           <span>CI4</span><span>MVC</span><span>MySQL</span><span>cPanel</span>
         </div>
       </div>
 
       <div class="project-card">
-        <span class="tag">coming soon</span>
-        <h3>Project name</h3>
-        <p class="placeholder-note">Send me the details — screenshots, stack, and a short description — and this card gets filled in.</p>
-        <div class="project-stack"><span>—</span></div>
+        <span class="tag">independent · since 2020</span>
+        <h3>Elcardoo</h3>
+        <p>Cross-platform mobile app built end-to-end — database design, backend, and product development — from concept to ongoing enhancement.</p>
+        <div class="project-stack">
+          <span>Flutter</span><span>CI4</span><span>MySQL</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <span class="tag">coming soon</span>
-        <h3>Project name</h3>
-        <p class="placeholder-note">Placeholder slot for your next project.</p>
-        <div class="project-stack"><span>—</span></div>
+        <span class="tag">contract · IRU · 2023–2025</span>
+        <h3>Insurance Regulatory Platform</h3>
+        <p>Designed and built core regulatory modules for an insurance regulatory unit, maintained existing modules, and integrated multiple payment gateways.</p>
+        <div class="project-stack">
+          <span>CI4</span><span>MySQL</span><span>Payment gateways</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <span class="tag">coming soon</span>
-        <h3>Project name</h3>
-        <p class="placeholder-note">Placeholder slot for your next project.</p>
-        <div class="project-stack"><span>—</span></div>
+        <span class="tag">contract · Alfadia · 2019–2023</span>
+        <h3>Digital Cards System</h3>
+        <p>Designed and built a digital cards system with a dedicated security layer for stored data, plus a secured API layer for third-party integrations.</p>
+        <div class="project-stack">
+          <span>PHP</span><span>MySQL</span><span>Secure APIs</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">contract · gov ID service</span>
+        <h3>Kuwait Mobile ID Verification</h3>
+        <p>Built government ID verification functionality for a national mobile verification service.</p>
+        <div class="project-stack">
+          <span>.NET</span><span>CI4</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">contract · Parkin · 2021–2023</span>
+        <h3>Parkin</h3>
+        <p>Auto parking ticket issuing system with integrated wallet management, led project planning, execution, and delivery timelines end-to-end.</p>
+        <div class="project-stack">
+          <span>.NET</span><span>MySQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">full-time · Algiftaat · 2016–2019</span>
+        <h3>Algiftaat</h3>
+        <p>E-commerce and order management system, built and maintained as an early-career full stack developer — laying the technical groundwork later applied at Tahseeel.</p>
+        <div class="project-stack">
+          <span>CodeIgniter 3</span><span>MySQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">independent · 2021–2022</span>
+        <h3>Adzjar</h3>
+        <p>View-ads-and-earn platform — planned and executed product features while managing APIs and database architecture, with ongoing performance improvements.</p>
+        <div class="project-stack">
+          <span>PHP</span><span>MySQL</span><span>REST APIs</span>
+        </div>
       </div>
 
     </div>
@@ -206,14 +263,16 @@
     <span class="section-tag">$ cat skills.json</span>
     <h2>Tools &amp; stack</h2>
     <div class="chip-grid">
-      <div class="chip"><strong>PHP</strong> / CodeIgniter 4</div>
+      <div class="chip"><strong>PHP</strong> / CodeIgniter 3 &amp; 4</div>
+      <div class="chip"><strong>Laravel</strong></div>
       <div class="chip"><strong>Flutter</strong> / Dart</div>
-      <div class="chip">MVC architecture</div>
+      <div class="chip">.NET</div>
+      <div class="chip">MERN / Next.js</div>
       <div class="chip">MySQL</div>
-      <div class="chip">REST APIs</div>
+      <div class="chip">Secure API design</div>
+      <div class="chip">Payment gateway integration</div>
+      <div class="chip">MVC architecture</div>
       <div class="chip">cPanel deployment</div>
-      <div class="chip">Role-based access systems</div>
-      <div class="chip">Git</div>
     </div>
   </div>
 </section>
@@ -225,7 +284,7 @@
       <p>Available for freelance web &amp; app development projects.</p>
       <div class="cta-row" style="justify-content:center;">
         <a href="https://instagram.com/bohasan.codes" class="btn btn-primary">@bohasan.codes on Instagram</a>
-        <a href="mailto:you@example.com" class="btn btn-ghost">Email me</a>
+        <a href="mailto:mpetlawad52@gmail.com" class="btn btn-ghost">Email me</a>
       </div>
     </div>
   </div>
