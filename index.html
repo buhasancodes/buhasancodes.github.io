@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoHasan — Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #12141c;
+    --bg-2: #1a1d29;
+    --card: #1e2230;
+    --text: #f2f0eb;
+    --muted: #8a8f98;
+    --gold: #c9a227;
+    --teal: #3ec1b3;
+    --border: rgba(242,240,235,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;}
+  code, .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(18,20,28,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;}
+  .logo{font-weight:700;font-size:18px;letter-spacing:-0.5px;}
+  .logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted);}
+  .nav-links a:hover{color:var(--text);}
+
+  /* HERO */
+  .hero{padding:100px 0 80px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;color:var(--teal);
+    margin-bottom:20px;display:block;
+  }
+  .terminal{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:24px 28px;
+    max-width:640px;
+    margin-bottom:36px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    color:#c9d1d9;
+  }
+  .terminal .dots{display:flex;gap:6px;margin-bottom:16px;}
+  .terminal .dot{width:10px;height:10px;border-radius:50%;background:#3a3f4c;}
+  .terminal .line{margin-bottom:6px;}
+  .terminal .prompt{color:var(--teal);}
+  .terminal .out{color:var(--muted);}
+  .cursor{display:inline-block;width:8px;height:16px;background:var(--gold);animation:blink 1s step-end infinite;vertical-align:middle;}
+  @keyframes blink{50%{opacity:0;}}
+
+  h1.headline{font-size:clamp(36px,6vw,56px);line-height:1.05;letter-spacing:-1px;margin-bottom:20px;}
+  h1.headline .accent{color:var(--gold);}
+  .sub{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:32px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    padding:13px 24px;border-radius:8px;font-size:14px;font-weight:600;
+    border:1px solid transparent;transition:transform 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--gold);color:#12141c;}
+  .btn-ghost{border-color:var(--border);color:var(--text);}
+
+  /* SECTION HEADER PATTERN */
+  .section{padding:70px 0;border-top:1px solid var(--border);}
+  .section-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;color:var(--teal);
+    margin-bottom:8px;display:block;
+  }
+  .section h2{font-size:30px;margin-bottom:36px;letter-spacing:-0.5px;}
+
+  /* SKILLS */
+  .chip-grid{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    background:var(--card);border:1px solid var(--border);
+    padding:9px 16px;border-radius:20px;font-size:14px;color:var(--muted);
+  }
+  .chip strong{color:var(--text);font-weight:500;}
+
+  /* PROJECTS */
+  .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:720px){.project-grid{grid-template-columns:1fr;}}
+  .project-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:26px;display:flex;flex-direction:column;
+    gap:12px;
+  }
+  .project-card .tag{
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);
+  }
+  .project-card h3{font-size:20px;}
+  .project-card p{color:var(--muted);font-size:14px;flex-grow:1;}
+  .project-stack{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--teal);font-family:'JetBrains Mono',monospace;}
+  .project-card .link{font-size:13px;color:var(--text);border-top:1px solid var(--border);padding-top:12px;margin-top:6px;}
+  .project-card .link:hover{color:var(--gold);}
+  .placeholder-note{font-size:12px;color:var(--muted);font-style:italic;}
+
+  /* CONTACT */
+  .contact-box{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:44px;text-align:center;
+  }
+  .contact-box h2{margin-bottom:12px;}
+  .contact-box p{color:var(--muted);margin-bottom:28px;}
+
+  footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">BoHasan<span>.codes</span></div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">$ whoami</span>
+    <div class="terminal">
+      <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="line"><span class="prompt">&gt;</span> loading profile...</div>
+      <div class="line out">name: BoHasan</div>
+      <div class="line out">stack: PHP / CodeIgniter 4 · Flutter</div>
+      <div class="line out">status: building real apps, fixing real bugs</div>
+      <div class="line"><span class="prompt">&gt;</span> <span class="cursor"></span></div>
+    </div>
+    <h1 class="headline">Real apps.<br>Real bugs.<br><span class="accent">Real code.</span></h1>
+    <p class="sub">Full stack developer specializing in CodeIgniter 4 (MVC) and Flutter — building production systems, not tutorial demos.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">See the work</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <span class="section-tag">$ ls ./projects</span>
+    <h2>Selected work</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <span class="tag">production · in development</span>
+        <h3>Royal Restaurant</h3>
+        <p>A meal delivery management platform built for a non-profit, serving 300+ households — with role-based staff access, activity logging, and a mobile-first household interface. Currently expanding into inventory management and per-household finance tracking.</p>
+        <div class="project-stack">
+          <span>CI4</span><span>MVC</span><span>MySQL</span><span>cPanel</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">coming soon</span>
+        <h3>Project name</h3>
+        <p class="placeholder-note">Send me the details — screenshots, stack, and a short description — and this card gets filled in.</p>
+        <div class="project-stack"><span>—</span></div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">coming soon</span>
+        <h3>Project name</h3>
+        <p class="placeholder-note">Placeholder slot for your next project.</p>
+        <div class="project-stack"><span>—</span></div>
+      </div>
+
+      <div class="project-card">
+        <span class="tag">coming soon</span>
+        <h3>Project name</h3>
+        <p class="placeholder-note">Placeholder slot for your next project.</p>
+        <div class="project-stack"><span>—</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="wrap">
+    <span class="section-tag">$ cat skills.json</span>
+    <h2>Tools &amp; stack</h2>
+    <div class="chip-grid">
+      <div class="chip"><strong>PHP</strong> / CodeIgniter 4</div>
+      <div class="chip"><strong>Flutter</strong> / Dart</div>
+      <div class="chip">MVC architecture</div>
+      <div class="chip">MySQL</div>
+      <div class="chip">REST APIs</div>
+      <div class="chip">cPanel deployment</div>
+      <div class="chip">Role-based access systems</div>
+      <div class="chip">Git</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's build something</h2>
+      <p>Available for freelance web &amp; app development projects.</p>
+      <div class="cta-row" style="justify-content:center;">
+        <a href="https://instagram.com/bohasan.codes" class="btn btn-primary">@bohasan.codes on Instagram</a>
+        <a href="mailto:you@example.com" class="btn btn-ghost">Email me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 BoHasan — built with real code, not templates.
+</footer>
+
+</body>
+</html>
